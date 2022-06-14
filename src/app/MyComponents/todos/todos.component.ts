@@ -21,20 +21,26 @@ export class TodosComponent implements OnInit {
       },
       {
         sno: 2,
-        title: "This is title",
-        desc: "Description",
+        title: "This is title2",
+        desc: "Description2",
         active: true
       },
       {
         sno: 3,
-        title: "This is title",
-        desc: "Description",
+        title: "This is title3",
+        desc: "Description3",
         active: true
       }
     ]
    }
 
   ngOnInit(): void {
+  }
+
+  deleteTodo(todo:Todo){
+    console.log(todo);
+    const index = this.todos.indexOf(todo);
+    this.todos.splice(index,1)
   }
 
 }

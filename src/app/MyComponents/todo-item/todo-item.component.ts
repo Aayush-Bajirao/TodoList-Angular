@@ -1,4 +1,4 @@
-import { Input, Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Todo } from 'src/app/Todo';
 
 
@@ -10,9 +10,18 @@ import { Todo } from 'src/app/Todo';
 export class TodoItemComponent implements OnInit {
 
   @Input() todo!: Todo;
+  @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
+
+
   constructor() {
     
   }
   ngOnInit(): void {
+  }
+
+  onClick(todo: Todo){
+    //emiting the particular todo (this.todoDelete) which came thruogh on click
+    this.todoDelete.emit(todo); 
+    console.log("Onclick is triggered")
   }
 }
