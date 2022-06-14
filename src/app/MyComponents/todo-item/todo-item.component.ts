@@ -9,7 +9,7 @@ import { Todo } from 'src/app/Todo';
 })
 export class TodoItemComponent implements OnInit {
 
-  @Input() todo: Todo;
+  @Input() todo!: Todo;
   constructor() {
     
   }
