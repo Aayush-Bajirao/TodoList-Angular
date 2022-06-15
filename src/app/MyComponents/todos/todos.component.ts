@@ -38,9 +38,14 @@ export class TodosComponent implements OnInit {
   }
 
   deleteTodo(todo:Todo){
-    console.log(todo);
+    console.log("del",todo);
     const index = this.todos.indexOf(todo);
     this.todos.splice(index,1)
+  }
+
+  addTodo(todo:Todo){
+    console.log("Add",todo);
+    this.todos.push(todo);
   }
 
 }
